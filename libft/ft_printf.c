@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:41:50 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/23 14:22:27 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:19:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	check_str(const char *str, va_list params, int n)
 {

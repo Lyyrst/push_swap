@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:51:33 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 20:31:25 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:18:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_arraylen(char const *str, char sep)
 	return (count);
 }
 
-static void	ft_freesplit(char **array, int i)
+void	ft_freesplit(char **array, int i)
 {
 	while (i >= 0)
 		free(array[i--]);

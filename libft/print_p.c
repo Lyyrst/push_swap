@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:24:16 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/26 17:10:59 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:19:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_put_pointer(unsigned long int n, char *base, int *nb)
 {

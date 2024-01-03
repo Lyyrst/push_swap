@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2023/11/18 15:27:25 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/01/03 19:23:02 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-HEADERS = libft.h ft_printf.h get_next_line.h
+HEADERS = libft.h get_next_line.h
 
 CFILES = ft_atoi.c \
 			ft_bzero.c \

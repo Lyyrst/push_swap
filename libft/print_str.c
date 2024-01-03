@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:56:49 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/26 17:05:01 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:19:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	print_str(char c, va_list params, int *n)
 {

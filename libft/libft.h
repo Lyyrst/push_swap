@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:08:23 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 20:38:29 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:18:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -64,5 +70,21 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *str, ...);
+int		check_str(const char *str, va_list params, int n);
+void	print_str(char c, va_list params, int *n);
+void	ft_putstr(char *str, int *n);
+void	ft_putchar(char c, int *n);
+void	ft_putnbr_base(long long int n, char *base, int *nb);
+void	ft_putupper_base(long long int n, char *base, int *nb);
+void	check_unsigned(unsigned int n, int *nb);
+void	print_p(unsigned long int n, int *nb);
+char	*get_next_line(int fd);
+t_list	*ft_lstlast(t_list *list);
+int		line_len(t_list *list);
+int		new_line(t_list *list);
+size_t	ft_strln(const char *str);
+void	lstclear(t_list **list);
+void	ft_freesplit(char **array, int i);
 
 #endif

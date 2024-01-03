@@ -3,46 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   stock_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 18:11:12 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/12/19 18:55:11 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/03 19:23:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
 
-stack	*new_node(int	n)
+/*int	is_int(char *str)
 {
-	stack	*node;
 
-	node = malloc(sizeof(stack));
-	if (!node)
-		return (0);
-	node->i = n;
-	node->next = 0;
-	return (node);
-}
+}*/
 
-void	add_node(stack **stack_a, stack *new)
+int	fill_stack(t_list *stack_a, char *str)
 {
-	new->next = *stack_a;
-	*stack_a = new;
-}
+	void	*n;
+	int 	i;
 
-stack	*stock_args(int argc, char **argv)
-{
-	stack	*stack_a;
-	int		n;
-
-	argc--;
-	n = ft_atoi(argv[argc]);
-	stack_a = new_node(n);
-	while (argc-- > 1)
+	/*if (!is_int)
 	{
-		n = ft_atoi(argv[argc]);
-		add_node(&stack_a, new_node(n));
+		ft_printf("Error : an argument is bigger than an int\n");
+		return (0);
+	}*/
+	i = ft_atoi(str);
+	n = &i;
+	if (!stack_a)
+		stack_a = ft_lstnew(n);
+	else
+		ft_lstadd_back(&stack_a, ft_lstnew(n));
+}
+
+t_list	*stock_args(int argc, char **argv)
+{
+	t_list	*stack_a;
+	char	**array;
+	int		i;
+	int		j;
+
+	i = 1;
+	while (argv[i])
+	{
+		array = ft_split(array[i], ' ');
+		if (!array)
+			return (0);
+		j = 0;
+		while (array[j])
+		{
+			if (!fill_stack(stack_a, array[j]))
+				return (0);
+			j++;
+		}
+		i++;
+		ft_freesplit(array, 0);
 	}
 	return (stack_a);
 }
