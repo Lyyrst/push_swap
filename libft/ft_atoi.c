@@ -6,14 +6,14 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:47:05 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 22:20:51 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:12:14 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int	i;
-	int	ret;
+	long	ret;
 	int	par;
 
 	i = 0;

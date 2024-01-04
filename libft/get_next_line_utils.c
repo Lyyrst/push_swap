@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/03 19:22:51 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/04 17:22:51 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,6 @@ int	new_line(t_list *list)
 		i++;
 	}
 	return (0);
-}
-
-t_list	*ft_lstlast(t_list *list)
-{
-	if (list == 0)
-		return (0);
-	while (list->next)
-		list = list->next;
-	return (list);
 }
 
 int	line_len(t_list *list)
