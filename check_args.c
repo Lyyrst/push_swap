@@ -40,7 +40,9 @@ int	check_digits(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] && (argv[i][j] == ' ' || ft_isdigit(argv[i][j]) == 1))
+			if (argv[i][j] == ' ')
+				j++;
+			else if ((is_sign(argv[i][j]) == 1 && ft_isdigit(argv[i][j + 1]) == 1) || ft_isdigit(argv[i][j]) == 1)
 				j++;
 			else
 			{
@@ -53,9 +55,9 @@ int	check_digits(char **argv)
 	return (1);
 }
 
-int	check_duplicate(t_list *stack_a)
+int	check_duplicate(stack *stack_a)
 {
-	t_list	*tmp;
+	stack	*tmp;
 	int		n;
 
 	n = 1;
@@ -64,7 +66,7 @@ int	check_duplicate(t_list *stack_a)
 		tmp = stack_a;
 		while (tmp->next)
 		{
-			if (tmp->next->content == stack_a->content)
+			if (tmp->next->n == stack_a->n)
 			{
 				ft_printf("Error : argument %d has a duplicate\n", n);
 				return (0);

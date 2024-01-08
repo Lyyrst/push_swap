@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:08:23 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/04 17:12:25 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:04:22 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ int		new_line(t_list *list);
 size_t	ft_strln(const char *str);
 void	lstclear(t_list **list);
 void	ft_freesplit(char **array, int i);
+int		is_sign(int c);
 
 #endif

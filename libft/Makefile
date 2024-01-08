@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2024/01/03 19:23:02 by marvin           ###   ########.fr        #
+#    Updated: 2024/01/08 12:04:50 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ CFILES = ft_atoi.c \
 			print_p.c \
 			print_str.c \
 			get_next_line.c \
-			get_next_line_utils.c 
+			get_next_line_utils.c \
+			is_sign.c
 			
 OFILES = $(CFILES:.c=.o)
 

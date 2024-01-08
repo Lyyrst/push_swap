@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:36 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/04 18:23:38 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:47:40 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 int	is_int(char *str)
 {
-	long	n;
+	int	n;
 
 	n = ft_atoi(str);
-	if (!(n <= INT_MAX && n >= INT_MIN))
-		return (0);
-	return (1);
+	if (n >= INT_MIN && n <= INT_MAX)
+		return (1);
+	return (0);
 }
 
-int	fill_stack(t_list **stack_a, char *str)
+int	fill_stack(stack **stack_a, char *str)
 {
-	void	*n;
 	int 	i;
 
 	if (!is_int(str))
@@ -33,18 +32,17 @@ int	fill_stack(t_list **stack_a, char *str)
 		ft_printf("Error : an argument is bigger than an int\n");
 		return (0);
 	}
-	i = (int)ft_atoi(str);
-	//n = &i;
+	i = ft_atoi(str);
 	if (!*stack_a)
-		*stack_a = ft_lstnew(n);
+		*stack_a = new_node(i, 0);
 	else
-		ft_lstadd_back(stack_a, ft_lstnew(n));
+		stack_addback(stack_a, new_node(i, 0));
 	return (1);
 }
 
-t_list	*stock_args(char **argv)
+stack	*stock_args(char **argv)
 {
-	t_list	*stack_a;
+	stack	*stack_a;
 	char	**array;
 	int		i;
 	int		j;

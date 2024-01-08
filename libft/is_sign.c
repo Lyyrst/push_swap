@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_sign.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 16:26:49 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 13:44:48 by kbutor-b         ###   ########.fr       */
+/*   Created: 2024/01/08 12:01:56 by kbutor-b          #+#    #+#             */
+/*   Updated: 2024/01/08 12:04:17 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	is_sign(int c)
 {
-	if (argc <= 1)
-	{
-		ft_printf("Error : no arguments\n");
-		return (0);
-	}
-	push_swap(argv);
+	if (c == '-' || c == '+')
+		return (1);
 	return (0);
 }
