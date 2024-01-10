@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:44:06 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 15:39:33 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:34:53 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,17 @@ stack	*last_node(stack *stack_n)
 	while (stack_n->next)
 		stack_n = stack_n->next;
 	return (stack_n);
+}
+
+int	stack_len(stack *stack_n)
+{
+	int	ret;
+
+	ret = 0;
+	while (stack_n)
+	{
+		ret++;
+		stack_n = stack_n->next;
+	}
+	return (ret);
 }

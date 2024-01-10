@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 16:26:49 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/10 18:33:32 by kbutor-b         ###   ########.fr       */
+/*   Created: 2024/01/10 15:59:43 by kbutor-b          #+#    #+#             */
+/*   Updated: 2024/01/10 16:17:19 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_three(stack **stack_a)
 {
-	if (argc <= 1)
-	{
-		ft_printf("Error : no arguments\n");
-		return (0);
-	}
-	push_swap(argv);
-	return (0);
+	stack	*big;
+
+	big = max_node(*stack_a);
+	if (big == *stack_a)
+		rotate(stack_a, 'a');
+	else if (big == (*stack_a)->next)
+		reverse_rotate(stack_a, 'a');
+	if ((*stack_a)->n > (*stack_a)->next->n)
+		swap(stack_a, 'a');
 }

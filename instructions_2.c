@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:30:14 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 16:10:24 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:18:09 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	reverse_rotate(stack **stack_n, char c)
 		tmp = tmp->next;
 	p = tmp->next;
 	stack_addfront(stack_n, new_node(p->n, p->cost));
-	ft_printf("p = %d\n", p->n);
 	free(p);
 	tmp->next = 0;
 	if (c == 'a')
