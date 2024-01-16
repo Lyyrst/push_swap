@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:06:41 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/10 19:17:31 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:14:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ stack	*max_node(stack* stack_n)
 
 	max_value = INT_MIN;
 	ret = stack_n;
-	if (!stack_n)
-		return (0);
 	while (stack_n)
 	{
 		if (stack_n->n > max_value)
@@ -40,8 +38,6 @@ stack	*min_node(stack* stack_n)
 
 	min_value = INT_MAX;
 	ret = stack_n;
-	if (!stack_n)
-		return (0);
 	while (stack_n)
 	{
 		if (stack_n->n < min_value)
@@ -88,16 +84,16 @@ stack	*get_cheapest(stack **stack_a, stack **stack_b)
 	return (ret);
 }
 
-void	for_push_b(stack **stack_b, stack *target, int pose)
+void	for_push(stack **stack_n, stack *target, int pose, char c)
 {
 	int		len;
 
-	len = stack_len(*stack_b);
-	while ((*stack_b)->n != target->n)
+	len = stack_len(*stack_n);
+	while ((*stack_n)->n != target->n)
 	{
 		if (pose <= len / 2)
-			rotate(stack_b, 'b');
+			rotate(stack_n, c);
 		else
-			reverse_rotate(stack_b, 'b');
+			reverse_rotate(stack_n, c);
 	}
 }
