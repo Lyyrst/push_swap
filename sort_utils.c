@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:06:41 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/11 20:14:27 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/17 18:53:29 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ stack	*get_cheapest(stack **stack_a, stack **stack_b)
 	return (ret);
 }
 
-void	for_push(stack **stack_n, stack *target, int pose, char c)
+void	for_push(stack **stack_n, int n, int pose, char c)
 {
-	int		len;
+	int	len;
 
 	len = stack_len(*stack_n);
-	while ((*stack_n)->n != target->n)
+	while ((*stack_n)->n != n)
 	{
 		if (pose <= len / 2)
 			rotate(stack_n, c);

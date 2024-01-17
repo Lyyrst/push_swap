@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:06:37 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/17 16:22:37 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:19:07 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,19 @@ void	push_twice(stack **stack_a, stack **stack_b)
 void	push_b(stack **stack_a, stack **stack_b)
 {
 	stack	*tmp;
+	stack	*target;
 	int		pose;
+	int		pose_b;
 	int		len;
 
 	tmp = get_cheapest(stack_a, stack_b);
+	target = get_b_target(tmp, stack_b);
+	//ft_printf("cheapest : %d  |  cost : %d  |  ", tmp->n, tmp->cost);
 	pose = get_pose(stack_a, tmp);
+	pose_b = get_pose(stack_b, target);
 	len = stack_len(*stack_a);
-	for_push(stack_b, get_b_target(tmp, stack_b), pose, 'b');
+	//ft_printf("b target : %d  |  pose : %d\n", target->n, pose_b);
+	for_push(stack_b, target->n, pose_b, 'b');
 	if (pose <= len / 2)
 	{
 		while ((*stack_a)->n != tmp->n)
@@ -45,11 +51,12 @@ void	push_b(stack **stack_a, stack **stack_b)
 void	push_back_a(stack **stack_a, stack **stack_b)
 {
 	stack	*tmp;
-	stack	*p;
+	stack	*target;
 
 	tmp = *stack_b;
-	p = get_a_target(tmp, stack_a);
-	for_push(stack_a, p, 0, 'a');
+	target = get_a_target(tmp, stack_a);
+	//ft_printf("node : %d  |  target : %d\n", tmp->n, target->n);
+	for_push(stack_a, target->n, get_pose(stack_a, target),'a');
 	push(stack_b, stack_a, 'a');
 }
 

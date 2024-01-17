@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_cost.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:46:35 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/11 20:15:47 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/17 17:10:48 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	get_pose(stack **stack_n, stack *target)
 	stack	*p;
 
 	p = *stack_n;
-	pose = 0;
+	pose = 1;
 	while (p != target)
 	{
 		pose++;
@@ -99,7 +99,7 @@ void	set_cost(stack **stack_a, stack **stack_b)
 	p = *stack_a;
 	while(p)
 	{
-		p->cost = cost(p, stack_a) + cost(get_b_target(p, stack_b), stack_b);
+		p->cost = cost(p, stack_a) + cost(get_b_target(p, stack_b), stack_b) + 1;
 		p = p->next;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 15:37:47 by kbutor-b          #+#    #+#              #
-#    Updated: 2024/01/17 16:08:35 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/01/17 18:39:31 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 HEADERS = push_swap.h
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 LIBFT = libft/libft.a
 
@@ -32,10 +32,12 @@ CFILES = main.c \
 			stack_utils.c \
 			stock_args.c
 
-OFILES = $(CFILES:.c = .o)
+OFILES = $(CFILES:.c=.o)
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all : $(NAME)
 
 $(LIBFT) :
 	$(MAKE) -C libft all
@@ -48,12 +50,10 @@ clean :
 	rm -rf $(OFILES)
 
 fclean : clean
-	$(MAKE) -C libft flcean
+	$(MAKE) -C libft fclean
 	rm -rf $(NAME)
 
 re : fclean $(NAME)
-
-all : $(NAME)
 
 .PHONY :
 	all clean fclean re

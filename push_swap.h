@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:43 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/17 15:32:42 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:53:51 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		stack_len(stack *stack_n);
 void	sort_algo(stack **stack_a);
 void	set_cost(stack **stack_a, stack **stack_b);
 stack	*get_cheapest(stack **stack_a, stack **stack_b);
-void	for_push(stack **stack_n, stack *target, int pose, char c);
+void	for_push(stack **stack_n, int n, int pose, char c);
 stack	*get_b_target(stack *p, stack **stack_b);
 stack	*get_a_target(stack *p, stack **stack_a);
 int		get_pose(stack **stack_n, stack *target);

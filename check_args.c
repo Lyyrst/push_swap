@@ -15,13 +15,17 @@
 int	check_empty(char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_strlen(argv[i]) == 0)
+		j = 0;
+		while ((argv[i][j] >= 9 && argv[i][j] <= 13) || argv[i][j] == 32)
+			j++;
+		if (ft_strlen(argv[i]) == j || ft_strlen(argv[i]) == 0)
 		{
-			ft_printf("Error : argument %d is empty\n", i);
+			ft_putstr_fd("Error\n", 2);
 			return (0);
 		}
 		i++;
@@ -42,11 +46,11 @@ int	check_digits(char **argv)
 		{
 			if (argv[i][j] == ' ')
 				j++;
-			else if ((is_sign(argv[i][j]) == 1 && ft_isdigit(argv[i][j + 1]) == 1) || ft_isdigit(argv[i][j]) == 1)
+			else if ((is_sign(argv[i][j]) == 1 && ft_isdigit(argv[i][j + 1]) == 1 && ft_isdigit(argv[i][j - 1]) == 0) || ft_isdigit(argv[i][j]) == 1)
 				j++;
 			else
 			{
-				ft_printf("Error : one of the argument is not an integer\n", i);
+				ft_putstr_fd("Error\n", 2);
 				return (0);
 			}
 		}
@@ -58,9 +62,7 @@ int	check_digits(char **argv)
 int	check_duplicate(stack *stack_a)
 {
 	stack	*tmp;
-	int		n;
 
-	n = 1;
 	while (stack_a)
 	{
 		tmp = stack_a;
@@ -68,13 +70,12 @@ int	check_duplicate(stack *stack_a)
 		{
 			if (tmp->next->n == stack_a->n)
 			{
-				ft_printf("Error : argument %d has a duplicate\n", n);
+				ft_putstr_fd("Error\n", 2);
 				return (0);
 			}
 			tmp = tmp->next;
 		}
 		stack_a = stack_a->next;
-		n++;
 	}
 	return (1);
 }
