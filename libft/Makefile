@@ -6,7 +6,7 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2024/01/08 12:04:50 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/01/17 16:12:12 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ CFILES = ft_atoi.c \
 			print_str.c \
 			get_next_line.c \
 			get_next_line_utils.c \
-			is_sign.c
+			is_sign.c 
 			
 OFILES = $(CFILES:.c=.o)
 

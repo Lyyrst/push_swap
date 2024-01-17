@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:06:37 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/11 20:08:33 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/17 16:22:37 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ void	push_twice(stack **stack_a, stack **stack_b)
 void	push_b(stack **stack_a, stack **stack_b)
 {
 	stack	*tmp;
-	stack	*p;
 	int		pose;
 	int		len;
 
 	tmp = get_cheapest(stack_a, stack_b);
-	p = *stack_a;
 	pose = get_pose(stack_a, tmp);
 	len = stack_len(*stack_a);
 	for_push(stack_b, get_b_target(tmp, stack_b), pose, 'b');
@@ -58,11 +56,14 @@ void	push_back_a(stack **stack_a, stack **stack_b)
 void	min_top(stack **stack_a)
 {
 	stack	*tmp;
+	stack	*min;
 	int		pose;
 	int		len;
 
-	tmp = min_node(*stack_a);
-	pose = get_pose(stack_a, tmp);
+	min = min_node(*stack_a);
+	tmp = malloc(sizeof(stack));
+	tmp->n = min->n;
+	pose = get_pose(stack_a, min);
 	len = stack_len(*stack_a);
 	while (tmp->n != (*stack_a)->n)
 	{
@@ -71,6 +72,7 @@ void	min_top(stack **stack_a)
 		else
 			reverse_rotate(stack_a, 'a');
 	}
+	free(tmp);
 }
 
 void	sort_algo(stack **stack_a)
@@ -85,10 +87,10 @@ void	sort_algo(stack **stack_a)
 	while (stack_len(stack_b) != 0)
 		push_back_a(stack_a, &stack_b);
 	min_top(stack_a);
-	ft_printf("*----*----*\n");
+	/*ft_printf("*----*----*\n");
 	while (stack_b)
 	{
 		ft_printf("b : %d\n", stack_b->n);
 		stack_b = stack_b->next;
-	}
+	}*/
 }

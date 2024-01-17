@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:51:33 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/03 19:18:09 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/16 12:19:43 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_len(const char *str, int i, char sep)
 	return (count);
 }
 
-static int	ft_arraylen(char const *str, char sep)
+static int	arraylen(char const *str, char sep)
 {
 	int	i;
 	int	count;
@@ -93,11 +93,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	array = malloc(sizeof(char *) * (ft_arraylen(s, c) + 1));
+	array = malloc(sizeof(char *) * (arraylen(s, c) + 1));
 	if (!array)
 		return (0);
 	if (!ft_makesplit(array, s, c))
 		return (0);
-	array[ft_arraylen(s, c)] = 0;
+	array[arraylen(s, c)] = 0;
 	return (array);
 }

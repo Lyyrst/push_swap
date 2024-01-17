@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:27:04 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/10 18:48:44 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:21:18 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ void	push_swap(char **argv)
 	if (is_sort(stack_a))
 		return ;
 	sort_stack(&stack_a, len);
-	ft_printf("*----*----*\n");
+	/*ft_printf("*----*----*\n");
 	while (stack_a)
 	{
 		ft_printf("a : %d\n", stack_a->n);
 		stack_a = stack_a->next;
 	}
-	ft_printf("*----*----*\n");
+	ft_printf("*----*----*\n");*/
+	free_stack(&stack_a);
 }

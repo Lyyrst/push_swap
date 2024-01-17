@@ -6,16 +6,16 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:47:03 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/04 17:22:51 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:06:02 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-void	lstclear(t_list **list)
+void	lstclear(t_gnl **list)
 {
-	t_list	*temp;
-	t_list	*p_list;
+	t_gnl	*temp;
+	t_gnl	*p_list;
 
 	p_list = *list;
 	while (p_list)
@@ -27,25 +27,24 @@ void	lstclear(t_list **list)
 	}
 }
 
-size_t	ft_strln(const char *str)
+t_gnl	*lstlast(t_gnl *list)
 {
-	size_t	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	if (list == 0)
+		return (0);
+	while (list->next)
+		list = list->next;
+	return (list);
 }
 
-int	new_line(t_list *list)
+int	new_line(t_gnl *list)
 {
-	t_list	*p_list;
+	t_gnl	*p_list;
 	int		i;
 
 	i = 0;
 	if (list == 0)
 		return (0);
-	p_list = ft_lstlast(list);
+	p_list = lstlast(list);
 	while (p_list->content[i])
 	{
 		if (p_list->content[i] == '\n')
@@ -55,7 +54,7 @@ int	new_line(t_list *list)
 	return (0);
 }
 
-int	line_len(t_list *list)
+int	line_len(t_gnl *list)
 {
 	int	count;
 	int	i;

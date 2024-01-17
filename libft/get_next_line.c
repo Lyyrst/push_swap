@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:43:43 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/03 19:22:47 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/16 12:06:04 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-void	empty_list(t_list **list)
+void	empty_list(t_gnl **list)
 {
-	t_list	*p_list;
-	t_list	*n;
+	t_gnl	*p_list;
+	t_gnl	*n;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	n = malloc(sizeof(t_list));
+	n = malloc(sizeof(t_gnl));
 	if (!n)
 		return ;
 	n->next = 0;
-	p_list = ft_lstlast(*list);
+	p_list = lstlast(*list);
 	while (p_list->content[i] && p_list->content[i] != '\n')
 		i++;
 	if (p_list->content && p_list->content[i] == '\n')
 		i++;
-	n->content = malloc(sizeof(char) * ((ft_strln(p_list->content) - i) + 1));
+	n->content = malloc(sizeof(char) * ((ft_strlen(p_list->content) - i) + 1));
 	if (!n->content)
 		return ;
 	while (p_list->content[i])
@@ -40,7 +40,7 @@ void	empty_list(t_list **list)
 	*list = n;
 }
 
-void	write_line(t_list *list, char **str)
+void	write_line(t_gnl *list, char **str)
 {
 	int		i;
 	int		j;
@@ -66,14 +66,14 @@ void	write_line(t_list *list, char **str)
 	str[0][j] = 0;
 }
 
-void	new_node(char *str, t_list **list, int n)
+void	new_node(char *str, t_gnl **list, int n)
 {
-	t_list	*node;
+	t_gnl	*node;
 	int		i;
-	t_list	*p_list;
+	t_gnl	*p_list;
 
 	i = 0;
-	node = malloc(sizeof(t_list));
+	node = malloc(sizeof(t_gnl));
 	if (!node)
 		return ;
 	node->next = 0;
@@ -90,12 +90,12 @@ void	new_node(char *str, t_list **list, int n)
 		*list = node;
 	else
 	{
-		p_list = ft_lstlast(*list);
+		p_list = lstlast(*list);
 		p_list->next = node;
 	}
 }
 
-void	stock_line(int fd, t_list **list)
+void	stock_line(int fd, t_gnl **list)
 {
 	char	*str;
 	int		n;
@@ -120,7 +120,7 @@ void	stock_line(int fd, t_list **list)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*list;
+	static t_gnl	*list;
 	char			*line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)

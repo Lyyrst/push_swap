@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:08:23 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 12:04:22 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:41:58 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-long		ft_atoi(const char *str);
+typedef struct gnl_list
+{
+	char			*content;
+	struct gnl_list	*next;
+}	t_gnl;
+
+int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t n);
 void	*ft_calloc(size_t n, size_t size);
 int		ft_isalnum(int c);
@@ -80,12 +86,13 @@ void	ft_putupper_base(long long int n, char *base, int *nb);
 void	check_unsigned(unsigned int n, int *nb);
 void	print_p(unsigned long int n, int *nb);
 char	*get_next_line(int fd);
-t_list	*ft_lstlast(t_list *list);
-int		line_len(t_list *list);
-int		new_line(t_list *list);
-size_t	ft_strln(const char *str);
-void	lstclear(t_list **list);
+int		line_len(t_gnl *list);
+int		new_line(t_gnl *list);
+void	lstclear(t_gnl **list);
 void	ft_freesplit(char **array, int i);
 int		is_sign(int c);
+t_gnl	*lstlast(t_gnl *list);
+int		ft_arraylen(char **arr);
+char	**merge_array(char **arr1, char **arr2, char *str1, char *str2);
 
 #endif
