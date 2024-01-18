@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Instructions.c                                     :+:      :+:    :+:   */
+/*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 12:21:18 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 15:28:25 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:21:10 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(stack **stack_n, char c)
+void	swap(t_stack **stack_n, char c)
 {
-	stack	*p;
+	t_stack	*p;
 	int		n;
 	int		cost;
 
@@ -33,16 +33,16 @@ void swap(stack **stack_n, char c)
 		ft_printf ("sb\n");
 }
 
-void	swap_stack(stack *stack_a, stack *stack_b)
+void	swap_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(&stack_a, 0);
 	swap(&stack_b, 0);
 	ft_printf("ss\n");
 }
 
-void	push(stack **stack_in, stack **stack_out, char c)
+void	push(t_stack **stack_in, t_stack **stack_out, char c)
 {
-	stack	*p_in;
+	t_stack	*p_in;
 
 	p_in = *stack_in;
 	if (!*stack_in)
@@ -56,9 +56,9 @@ void	push(stack **stack_in, stack **stack_out, char c)
 		ft_printf("pb\n");
 }
 
-void	rotate(stack **stack_n, char c)
+void	rotate(t_stack **stack_n, char c)
 {
-	stack	*p;
+	t_stack	*p;
 
 	p = *stack_n;
 	if (p->next == 0)
@@ -72,7 +72,7 @@ void	rotate(stack **stack_n, char c)
 		ft_printf("rb\n");
 }
 
-void	rotate_stack(stack **stack_a, stack **stack_b)
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a || !stack_b)
 		return ;

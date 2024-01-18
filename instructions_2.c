@@ -6,16 +6,16 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:30:14 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/10 16:18:09 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:14:46 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(stack **stack_n, char c)
+void	reverse_rotate(t_stack **stack_n, char c)
 {
-	stack	*p;
-	stack	*tmp;
+	t_stack	*p;
+	t_stack	*tmp;
 
 	if ((*stack_n)->next == 0)
 		return ;
@@ -32,7 +32,7 @@ void	reverse_rotate(stack **stack_n, char c)
 		ft_printf("rrb\n");
 }
 
-void	reverse_rotate_stack(stack **stack_a, stack **stack_b)
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a || !stack_b)
 		return ;

@@ -6,54 +6,55 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:43 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/17 18:53:51 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:58:39 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-# ifndef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "stdlib.h"
-#include "libft/libft.h"
-#include "limits.h"
+# include "stdlib.h"
+# include "libft/libft.h"
+# include "limits.h"
 
 typedef struct stack_list
 {
 	int					n;
 	int					cost;
 	struct stack_list	*next;
-}	stack;
+}	t_stack;
 
 void	push_swap(char **argv);
-stack	*stock_args(char **argv);
+t_stack	*stock_args(char **argv);
 int		check_empty(char **argv);
 int		check_digits(char **argv);
-int		check_duplicate(stack *stack_a);
-void	stack_addback(stack **stack_n, stack *new_node);
-stack	*new_node(int n, int cost);
-void 	swap(stack **stack_n, char c);
-void	swap_stack(stack *stack_a, stack *stack_b);
-void	push(stack **stack_in, stack **stack_out, char c);
-void	stack_addfront(stack **stack_n, stack *new_node);
-void	rotate(stack **stack_n, char c);
-void	reverse_rotate(stack **stack_n, char c);
-void	rotate_stack(stack **stack_a, stack **stack_b);
-void	reverse_rotate_stack(stack **stack_a, stack **stack_b);
-stack	*last_node(stack *stack_n);
-void	sort_three(stack **stack_a);
-stack	*max_node(stack* stack_n);
-stack	*min_node(stack* stack_n);
-int		is_sort(stack *stack_a);
-int		stack_len(stack *stack_n);
-void	sort_algo(stack **stack_a);
-void	set_cost(stack **stack_a, stack **stack_b);
-stack	*get_cheapest(stack **stack_a, stack **stack_b);
-void	for_push(stack **stack_n, int n, int pose, char c);
-stack	*get_b_target(stack *p, stack **stack_b);
-stack	*get_a_target(stack *p, stack **stack_a);
-int		get_pose(stack **stack_n, stack *target);
-void	free_stack(stack **stack_n);
+int		check_duplicate(t_stack *stack_a);
+void	stack_addback(t_stack **stack_n, t_stack *new_node);
+t_stack	*new_node(int n, int cost);
+void	swap(t_stack **stack_n, char c);
+void	swap_stack(t_stack *stack_a, t_stack *stack_b);
+void	push(t_stack **stack_in, t_stack **stack_out, char c);
+void	stack_addfront(t_stack **stack_n, t_stack *new_node);
+void	rotate(t_stack **stack_n, char c);
+void	reverse_rotate(t_stack **stack_n, char c);
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b);
+t_stack	*last_node(t_stack *stack_n);
+void	sort_three(t_stack **stack_a);
+t_stack	*max_node(t_stack *stack_n);
+t_stack	*min_node(t_stack *stack_n);
+int		is_sort(t_stack *stack_a);
+int		stack_len(t_stack *stack_n);
+void	sort_algo(t_stack **stack_a);
+void	set_cost(t_stack **s_a, t_stack **s_b);
+t_stack	*get_cheapest(t_stack **stack_a, t_stack **stack_b);
+void	for_push_b(t_stack **stack_a, t_stack **stack_b, t_stack *node);
+t_stack	*get_b_target(t_stack *p, t_stack **stack_b);
+t_stack	*get_a_target(t_stack *p, t_stack **stack_a);
+int		get_pose(t_stack **stack_n, int n);
+void	free_stack(t_stack **stack_n);
+void	for_rotate(t_stack **s_a, t_stack **s_b, int p_node, int p_target);
+void	for_rrotate(t_stack **s_a, t_stack **s_b, int p_node, int p_target);
+void	for_push_r(t_stack **stack_n, int pose, char c);
 
-# endif
+#endif

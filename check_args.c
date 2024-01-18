@@ -46,7 +46,10 @@ int	check_digits(char **argv)
 		{
 			if (argv[i][j] == ' ')
 				j++;
-			else if ((is_sign(argv[i][j]) == 1 && ft_isdigit(argv[i][j + 1]) == 1 && ft_isdigit(argv[i][j - 1]) == 0) || ft_isdigit(argv[i][j]) == 1)
+			else if ((is_sign(argv[i][j]) == 1
+				&& ft_isdigit(argv[i][j + 1]) == 1
+				&& ft_isdigit(argv[i][j - 1]) == 0)
+				|| ft_isdigit(argv[i][j]) == 1)
 				j++;
 			else
 			{
@@ -59,9 +62,9 @@ int	check_digits(char **argv)
 	return (1);
 }
 
-int	check_duplicate(stack *stack_a)
+int	check_duplicate(t_stack *stack_a)
 {
-	stack	*tmp;
+	t_stack	*tmp;
 
 	while (stack_a)
 	{

@@ -6,15 +6,15 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:59:43 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/10 16:17:19 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:23:50 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(stack **stack_a)
+void	sort_three(t_stack **stack_a)
 {
-	stack	*big;
+	t_stack	*big;
 
 	big = max_node(*stack_a);
 	if (big == *stack_a)

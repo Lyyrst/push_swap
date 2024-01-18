@@ -6,7 +6,7 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 15:37:47 by kbutor-b          #+#    #+#              #
-#    Updated: 2024/01/17 18:39:31 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/01/18 15:57:23 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ CFILES = main.c \
 			sort_three.c \
 			sort_utils.c \
 			stack_utils.c \
-			stock_args.c
+			stock_args.c \
+			for_push.c
 
 OFILES = $(CFILES:.c=.o)
 

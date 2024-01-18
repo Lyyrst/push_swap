@@ -6,10 +6,9 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:36 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/08 14:47:40 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:16:28 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -23,9 +22,9 @@ int	is_int(char *str)
 	return (0);
 }
 
-int	fill_stack(stack **stack_a, char *str)
+int	fill_stack(t_stack **stack_a, char *str)
 {
-	int 	i;
+	int	i;
 
 	if (!is_int(str))
 	{
@@ -40,9 +39,9 @@ int	fill_stack(stack **stack_a, char *str)
 	return (1);
 }
 
-stack	*stock_args(char **argv)
+t_stack	*stock_args(char **argv)
 {
-	stack	*stack_a;
+	t_stack	*stack_a;
 	char	**array;
 	int		i;
 	int		j;

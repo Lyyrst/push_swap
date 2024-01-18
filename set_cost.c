@@ -6,20 +6,20 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:46:35 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/17 17:10:48 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:22:41 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_pose(stack **stack_n, stack *target)
+int	get_pose(t_stack **stack_n, int n)
 {
 	int		pose;
-	stack	*p;
+	t_stack	*p;
 
 	p = *stack_n;
 	pose = 1;
-	while (p != target)
+	while (p->n != n)
 	{
 		pose++;
 		p = p->next;
@@ -27,9 +27,9 @@ int	get_pose(stack **stack_n, stack *target)
 	return (pose);
 }
 
-int	cost(stack *p, stack **stack_n)
+int	cost(t_stack *p, t_stack **stack_n)
 {
-	stack	*tmp;
+	t_stack	*tmp;
 	int		len;
 	int		pose;
 
@@ -46,10 +46,10 @@ int	cost(stack *p, stack **stack_n)
 	return (pose - 1);
 }
 
-stack	*get_b_target(stack *p, stack **stack_b)
+t_stack	*get_b_target(t_stack *p, t_stack **stack_b)
 {
-	stack	*tmp;
-	stack	*ret;
+	t_stack	*tmp;
+	t_stack	*ret;
 	int		n;
 
 	tmp = *stack_b;
@@ -69,10 +69,10 @@ stack	*get_b_target(stack *p, stack **stack_b)
 	return (ret);
 }
 
-stack	*get_a_target(stack *p, stack **stack_a)
+t_stack	*get_a_target(t_stack *p, t_stack **stack_a)
 {
-	stack	*tmp;
-	stack	*ret;
+	t_stack	*tmp;
+	t_stack	*ret;
 	int		n;
 
 	tmp = *stack_a;
@@ -92,14 +92,14 @@ stack	*get_a_target(stack *p, stack **stack_a)
 	return (ret);
 }
 
-void	set_cost(stack **stack_a, stack **stack_b)
+void	set_cost(t_stack **s_a, t_stack **s_b)
 {
-	stack	*p;
+	t_stack	*p;
 
-	p = *stack_a;
-	while(p)
+	p = *s_a;
+	while (p)
 	{
-		p->cost = cost(p, stack_a) + cost(get_b_target(p, stack_b), stack_b) + 1;
+		p->cost = cost(p, s_a) + cost(get_b_target(p, s_b), s_b) + 1;
 		p = p->next;
 	}
 }
