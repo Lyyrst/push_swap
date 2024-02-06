@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:43 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/18 15:58:39 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:02:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void	free_stack(t_stack **stack_n);
 void	for_rotate(t_stack **s_a, t_stack **s_b, int p_node, int p_target);
 void	for_rrotate(t_stack **s_a, t_stack **s_b, int p_node, int p_target);
 void	for_push_r(t_stack **stack_n, int pose, char c);
+int		is_int(char *str);
 
 #endif

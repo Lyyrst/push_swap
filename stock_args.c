@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stock_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:26:36 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/18 15:16:28 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:04:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_int(char *str)
-{
-	int	n;
-
-	n = ft_atoi(str);
-	if (n >= INT_MIN && n <= INT_MAX)
-		return (1);
-	return (0);
-}
 
 int	fill_stack(t_stack **stack_a, char *str)
 {

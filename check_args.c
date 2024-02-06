@@ -82,3 +82,42 @@ int	check_duplicate(t_stack *stack_a)
 	}
 	return (1);
 }
+
+long int	ft_atol(const char *str)
+{
+	int			i;
+	long int	ret;
+	int			par;
+
+	i = 0;
+	ret = 0;
+	par = 0;
+	if (str[0] == 0)
+		return (0);
+	while ((str[i] >= 9 && str[i] <= 13)
+		|| str[i] == 32)
+			i++;
+	if (str[i] == '-')
+		par = 1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while ((str[i] >= '0' && str[i] <= '9')
+		&& str[i])
+	{
+		ret *= 10;
+		ret += str[i++] - 48;
+	}
+	if (par == 1)
+		return (ret * -1);
+	return (ret);
+}
+
+int	is_int(char *str)
+{
+	long int	n;
+
+	n = ft_atol(str);
+	if (n > INT_MAX || n < INT_MIN)
+		return (0);
+	return (1);
+}
