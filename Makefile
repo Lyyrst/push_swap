@@ -17,21 +17,21 @@ HEADERS = push_swap.h
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g
 
-LIBFT = libft/libft.a
+LIBFT = src/libft/libft.a
 
-CFILES = main.c \
-			push_swap.c \
-			check_args.c \
-			free.c \
-			instructions_2.c \
-			instructions.c \
-			set_cost.c \
-			sort_algo.c \
-			sort_three.c \
-			sort_utils.c \
-			stack_utils.c \
-			stock_args.c \
-			for_push.c
+CFILES = src/main.c \
+			src/push_swap.c \
+			src/check_args.c \
+			src/free.c \
+			src/instructions_2.c \
+			src/instructions.c \
+			src/set_cost.c \
+			src/sort_algo.c \
+			src/sort_three.c \
+			src/sort_utils.c \
+			src/stack_utils.c \
+			src/stock_args.c \
+			src/for_push.c
 
 OFILES = $(CFILES:.c=.o)
 
